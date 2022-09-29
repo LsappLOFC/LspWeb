@@ -13,8 +13,7 @@ export class LoginService {
       return await this._auth.signInWithEmailAndPassword(email, password);
     }
     catch(error) {
-      alert("No se ha podido hacer el log-in correctamente. Error: " + error)
-      console.log("No se ha podido hacer el log-in correctamente. Error: " + error);
+      alert("No se ha podido hacer el log-in correctamente. Error en los datos ingresados");
       return null;
     }
   }

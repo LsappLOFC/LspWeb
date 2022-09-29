@@ -1,12 +1,23 @@
-
-<form #formLogIn="ngForm">
-  <label>Email</label>
-  <input type="email" name="cajamail" #cajamail placeholder="example@example.com" class="form-control">
-  <br/>
-  <label>Contraseña</label>
-  <input type="password" name="cajapassword" #cajapassword placeholder="123456" class="form-control" minlength="6" maxlength="20" pattern="[A-Za-z0-9]{6,20}">
-  <br/>
-  <button class="btn btn-success" (click)="logIn()">
-    Log In
-  </button>
-</form>
+<div class="login">
+  <form class="custom-form" method="post">
+      <label>Email</label>
+      <input
+        type="email"
+        name="email" #email
+        placeholder="example@example.com"
+        class="form-control"
+        required="required">
+      <br/>
+      <label>Password</label>
+      <input
+        type="password"
+        name="password" #password
+        placeholder="******"
+        class="form-control"
+        pattern="[A-Za-z0-9]{6,20}">
+      <br/>
+      <button class="btn btn-success" (click)="logIn()">
+        Log In
+      </button>
+  </form>
+</div>
