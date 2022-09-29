@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
-import {collection, collectionData, Firestore} from "@angular/fire/firestore";
-import {User} from "../interfaces/user";
-import {Observable} from "rxjs";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private firestore: Firestore) { }
+  constructor(private _auth : AngularFireAuth){}
 
-  getAllUser() : Observable<User[]>{
-    const userRef = collection(this.firestore, 'users');
-    return collectionData(userRef, { idField: 'id'}) as Observable<User[]>;
+  async login(email: string, password: string){
+    try{
+      return await this._auth.signInWithEmailAndPassword(email, password);
+    }
+    catch(error) {
+      alert("No se ha podido hacer el log-in correctamente. Error: " + error)
+      console.log("No se ha podido hacer el log-in correctamente. Error: " + error);
+      return null;
+    }
   }
 }
