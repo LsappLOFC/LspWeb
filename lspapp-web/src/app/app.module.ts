@@ -11,12 +11,14 @@ import {LoginComponent} from "./Components/login/login.component";
 import {HomeComponent} from "./Components/home/home.component";
 import {HttpClientModule} from "@angular/common/http";
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
+import { NavComponent } from './Components/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
