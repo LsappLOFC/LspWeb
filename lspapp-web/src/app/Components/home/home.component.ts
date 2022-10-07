@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {UsersService} from "../../services/users.service";
+import {User} from "../../interfaces/user";
 declare var window: any;
 
 @Component({
@@ -13,14 +14,14 @@ export class HomeComponent implements OnInit {
   listOfContacts:any ;
 
   formModal: any;
+  users:User[];
 
   constructor(private userService: UsersService,
               private http: HttpClient){
-    //get request from web api
+    this.users = [];
     this.userService.getUser().subscribe(data => {
-
       this.listOfContacts = data;
-
+      this.users = data;
     }, error => console.error(error));
   }
 
@@ -33,6 +34,11 @@ export class HomeComponent implements OnInit {
 
   openFormModal() {
     this.formModal.show();
+    this.userService.getUser().subscribe(data => {
+      data.forEach((user:any) => {
+        console.log(user.id);
+      })
+    });
   }
   saveSomeThing() {
     // confirm or save something

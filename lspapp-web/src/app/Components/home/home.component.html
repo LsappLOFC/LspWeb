@@ -4,12 +4,12 @@
   <input class="form-control mt-2 mb-2" type="text" [(ngModel)]="searchText"  (input)="Search()" placeholder="Search by email" />
   <table class="table table-striped table-bordered table-sm row-border hover" id="datatableexample">
     <thead style="background-color: #5d7eff">
-      <tr>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Fecha registro</th>
-        <th>Habilitar</th>
-      </tr>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Fecha registro</th>
+      <th>Habilitar</th>
+    </tr>
     </thead>
     <tbody>
     <tr *ngFor="let group of listOfContacts; let item = index">
