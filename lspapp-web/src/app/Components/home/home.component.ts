@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {User} from "../../interfaces/user";
 import {UsersService} from "../../services/users.service";
-import {user} from "@angular/fire/auth";
+declare var window: any;
 
 @Component({
   selector: 'app-home',
@@ -12,6 +11,8 @@ import {user} from "@angular/fire/auth";
 export class HomeComponent implements OnInit {
   searchText = "";
   listOfContacts:any ;
+
+  formModal: any;
 
   constructor(private userService: UsersService,
               private http: HttpClient){
@@ -25,6 +26,17 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.formModal = new window.bootstrap.Modal(
+      document.getElementById('myModal')
+    );
+  }
+
+  openFormModal() {
+    this.formModal.show();
+  }
+  saveSomeThing() {
+    // confirm or save something
+    this.formModal.hide();
   }
 
   Search(){
