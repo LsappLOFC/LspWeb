@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import {User} from "../../interfaces/user";
+import {UsersService} from "../../services/users.service";
+import {user} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-home',
@@ -7,10 +10,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  searchText = "";
+  listOfContacts:any ;
 
-  constructor() { }
+  constructor(private userService: UsersService,
+              private http: HttpClient){
+    //get request from web api
+    this.userService.getUser().subscribe(data => {
+
+      this.listOfContacts = data;
+
+    }, error => console.error(error));
+  }
+
 
   ngOnInit(): void {
   }
 
+  Search(){
+    // alert(this.searchText)
+    if(this.searchText!== ""){
+      let searchValue = this.searchText.toLocaleLowerCase();
+
+      this.listOfContacts = this.listOfContacts.filter((contact:any) =>{
+        return contact.email.toLocaleLowerCase().match(searchValue )
+          ;
+        // you can keep on adding object properties here
+
+      });
+
+      console.log(this.listOfContacts);
+    }
+    else {
+      this.userService.getUser().subscribe(data => {
+
+        this.listOfContacts = data;
+
+      }, error => console.error(error));
+      // if(this.searchText== ""){ you don't need this if
+
+    }
+  }
 }
