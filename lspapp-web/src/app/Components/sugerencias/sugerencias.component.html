@@ -3,10 +3,8 @@
 <div class="contenido">
   <h1> SUGERENCIAS </h1>
 
-  <input type="date" style="max-width: 15%; min-width: 34%" [(ngModel)]="searchText"  (input)="Search()" placeholder="Search by date" />
-
-  <ng-container *ngFor="let group of listOfComents">
-    <ngb-accordion *ngIf="(group.type_comment == 'sugerencias')">
+  <ng-container  *ngFor="let group of listOfComents | orderBy: 'fechaHoraRegistro'">
+    <ngb-accordion style="background-color: #005aff" *ngIf="(group.type_comment == 'sugerencias')">
       <ngb-panel>
         <ng-template ngbPanelTitle>
           <div class="cabecera">

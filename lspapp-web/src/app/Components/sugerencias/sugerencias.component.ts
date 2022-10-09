@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../../interfaces/user";
-import {Comments} from "../../interfaces/comments";
 import {CommentsService} from "../../services/comments.service";
 import {UsersService} from "../../services/users.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Comments} from "../../interfaces/comments";
 
 @Component({
   selector: 'app-sugerencias',
@@ -12,11 +12,13 @@ import {UsersService} from "../../services/users.service";
 export class SugerenciasComponent implements OnInit {
   listOfComents:any;
   listOfContacts:any;
+  comments: unknown;
   searchText = "";
   date = '';
 
   constructor(private commentService: CommentsService,
               private userService: UsersService) {
+
     this.commentService.getComments().subscribe(data => {
       this.listOfComents = data;
     }, error => console.error(error));
@@ -28,6 +30,8 @@ export class SugerenciasComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
   changeStatusLeido(id: string, estado_leido: boolean) {
     if (estado_leido){
       alert('El mensaje esta marcado como leido, no se puede hacer cambios');

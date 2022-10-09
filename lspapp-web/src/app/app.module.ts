@@ -14,6 +14,7 @@ import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 import { NavComponent } from './Components/nav/nav.component';
 import { SugerenciasComponent } from './Components/sugerencias/sugerencias.component';
 import {NgbAccordionModule, NgbAlertModule, NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
+import {OrderModule} from "ngx-order-pipe";
 
 @NgModule({
   declarations: [
@@ -23,18 +24,19 @@ import {NgbAccordionModule, NgbAlertModule, NgbDatepickerModule} from "@ng-boots
     NavComponent,
     SugerenciasComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
-        provideFirestore(() => getFirestore()),
-        FormsModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        NgbAccordionModule,
-        NgbAlertModule,
-        NgbDatepickerModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbAccordionModule,
+    NgbAlertModule,
+    NgbDatepickerModule,
+    OrderModule
+  ],
   providers: [ { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })

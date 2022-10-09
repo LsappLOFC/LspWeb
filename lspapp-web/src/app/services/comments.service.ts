@@ -20,4 +20,8 @@ export class CommentsService {
   updateCommentsLeido(_id:any, _estado_leido:boolean) {
     this.db.doc(`comments/${_id}`).update({estado_leido:_estado_leido});
   }
+
+  getCommentById(id:string){
+    return this.db.collection('comments').doc(id).valueChanges()
+  }
 }
