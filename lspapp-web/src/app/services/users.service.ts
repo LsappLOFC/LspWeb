@@ -16,6 +16,10 @@ export class UsersService {
     const placeRef = collection(this.firestore, 'users');
     return collectionData(placeRef, { idField: 'id' }) as Observable<User[]>;
   }
+
+  getUserById(id:any){
+    return this.db.collection('users').doc(id).valueChanges()
+  }
   updateUserHabilitado(_id:any, _habilitado:boolean) {
     this.db.doc(`users/${_id}`).update({habilitado:_habilitado});
   }

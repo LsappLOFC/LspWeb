@@ -6,7 +6,7 @@
   transition: 0.5s;
 }
 .sidebar-nav ul li a:hover {
-  background-color: #eeeeee;
+  background-color: #5db6ec;
   border-radius: 4px;
 }
 .sidebar-nav .offcanvas {
@@ -38,7 +38,7 @@
   font-size: 16px;
 }
 .navbar-nav{
-  filter: opacity(100%) drop-shadow(0 0 0 white);
+  filter: opacity(100%) drop-shadow(0 0 0 #b7d0f1);
 }
 
 .logout{

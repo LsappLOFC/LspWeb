@@ -1,0 +1,41 @@
+
+.contenido{
+  margin-top: 5em;
+  margin-left: 5em;
+  margin-right: 5em;
+  text-align: center;
+}
+
+.contenido h1{
+  font-size: 35px;
+  font-family: "Zizou Slab Light", serif;
+  color: #5d7eff;
+  text-align: center;
+}
+
+.cabecera{
+  width: 100%;
+  line-height: 1;
+}
+.titulo{
+  text-align: start;
+  text-overflow: ellipsis;
+  width: 50%;
+  white-space: nowrap;
+  overflow:hidden;
+}
+
+.estado_leido{
+  text-align: right;
+  margin: -15px 40% 0 35%;
+}
+
+.contenido{
+  width: 90%;
+  font-family: "Zizou Slab Light", serif;
+  text-align: start;
+}
+
+.cuerpo{
+  line-height: 3em;
+}

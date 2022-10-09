@@ -12,7 +12,8 @@ declare var window: any;
 })
 export class HomeComponent implements OnInit {
   searchText = "";
-  listOfContacts:any ;
+  listOfContacts:any;
+
   id = "";
   habilitado: boolean = true;
 
@@ -47,12 +48,10 @@ export class HomeComponent implements OnInit {
     if (this.habilitado){
       this.habilitado = false
       this.userService.updateUserHabilitado(this.id, this.habilitado);
-      console.log('cambio1');
     }
     else {
       this.habilitado = true
       this.userService.updateUserHabilitado(this.id, this.habilitado);
-      console.log('cambio2');
     }
   }
 

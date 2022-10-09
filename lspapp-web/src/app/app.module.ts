@@ -12,6 +12,8 @@ import {HomeComponent} from "./Components/home/home.component";
 import {HttpClientModule} from "@angular/common/http";
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 import { NavComponent } from './Components/nav/nav.component';
+import { SugerenciasComponent } from './Components/sugerencias/sugerencias.component';
+import {NgbAccordionModule, NgbAlertModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -19,16 +21,19 @@ import { NavComponent } from './Components/nav/nav.component';
     LoginComponent,
     HomeComponent,
     NavComponent,
+    SugerenciasComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgbAccordionModule,
+        NgbAlertModule
+    ],
   providers: [ { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })
