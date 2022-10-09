@@ -3,10 +3,10 @@
 <div class="contenido">
   <h1> SUGERENCIAS </h1>
 
-  <input class="form-control mt-2 mb-2" type="date" style="max-width: 15%; min-width: 34%" [(ngModel)]="searchText"  (input)="Search()" placeholder="Search by date" />
+  <input type="date" style="max-width: 15%; min-width: 34%" [(ngModel)]="searchText"  (input)="Search()" placeholder="Search by date" />
 
   <ng-container *ngFor="let group of listOfComents">
-    <ngb-accordion #acc="ngbAccordion"  *ngIf="(group.type_comment == 'sugerencias')">
+    <ngb-accordion *ngIf="(group.type_comment == 'sugerencias')">
       <ngb-panel>
         <ng-template ngbPanelTitle>
           <div class="cabecera">
@@ -27,6 +27,7 @@
               <span > AUTOR: {{users.name}} </span> <br>
               <span> FECHA: {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}} </span> <br>
               <span> SUGERENCIA: {{group.comment}} </span> <br>
+              <button type="button" class="btn btn-success" (click)="changeStatusLeido(group.id, group.estado_leido)">Marcar como Leido </button>
             </div>
           </div>
         </ng-template>

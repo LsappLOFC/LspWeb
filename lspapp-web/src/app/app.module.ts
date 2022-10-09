@@ -13,7 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 import { NavComponent } from './Components/nav/nav.component';
 import { SugerenciasComponent } from './Components/sugerencias/sugerencias.component';
-import {NgbAccordionModule, NgbAlertModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbAccordionModule, NgbAlertModule, NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import {NgbAccordionModule, NgbAlertModule} from "@ng-bootstrap/ng-bootstrap";
         ReactiveFormsModule,
         HttpClientModule,
         NgbAccordionModule,
-        NgbAlertModule
+        NgbAlertModule,
+        NgbDatepickerModule
     ],
   providers: [ { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]

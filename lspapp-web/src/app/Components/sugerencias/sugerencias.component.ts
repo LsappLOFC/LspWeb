@@ -13,6 +13,7 @@ export class SugerenciasComponent implements OnInit {
   listOfComents:any;
   listOfContacts:any;
   searchText = "";
+  date = '';
 
   constructor(private commentService: CommentsService,
               private userService: UsersService) {
@@ -26,6 +27,15 @@ export class SugerenciasComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  changeStatusLeido(id: string, estado_leido: boolean) {
+    if (estado_leido){
+      alert('El mensaje esta marcado como leido, no se puede hacer cambios');
+    }
+    else {
+      estado_leido = true
+      this.commentService.updateCommentsLeido(id, estado_leido);
+    }
   }
 
   Search(){

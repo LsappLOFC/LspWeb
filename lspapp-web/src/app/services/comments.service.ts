@@ -17,7 +17,7 @@ export class CommentsService {
     const placeRef = collection(this.firestore, 'comments');
     return collectionData(placeRef, { idField: 'id' }) as Observable<Comments[]>;
   }
-  updateCommentsLeido(_id:any, _leido:boolean) {
-    this.db.doc(`comments/${_id}`).update({leido:_leido});
+  updateCommentsLeido(_id:any, _estado_leido:boolean) {
+    this.db.doc(`comments/${_id}`).update({estado_leido:_estado_leido});
   }
 }
