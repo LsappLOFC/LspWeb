@@ -37,17 +37,17 @@ ngb-accordion ::ng-deep .card-header button:focus {
 
 .inicio{
   text-align: start;
-  margin: 3% 0 0 2%;
+  margin: 0.5% 0 0.5% 2%;
 }
 
 .centro{
   text-align: center;
-  margin: -2% 0 0 23%;
+  margin: -1.8% 0 0.5% 23%;
 }
 
 .derecha{
   text-align: right;
-  margin: -2% 8% 0 0;
+  margin: -2.3% 8% 0.5% 0;
 }
 
 .cabecera{

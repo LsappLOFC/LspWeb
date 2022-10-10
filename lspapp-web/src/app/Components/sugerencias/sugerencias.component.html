@@ -3,6 +3,9 @@
 <div class="contenido">
   <h1> SUGERENCIAS </h1>
 
+  <input class="form-control mt-2 mb-2" type="text" [(ngModel)]="searchText"  (input)="Search()" placeholder="Search by autor name" />
+
+
   <div class="categorias">
     <div class="inicio">
       COMENTARIO
@@ -15,8 +18,8 @@
     </div>
   </div>
 
-  <ng-container  *ngFor="let group of listOfComents | orderBy: 'fechaHoraRegistro'">
-    <ngb-accordion style="background-color: #005aff" *ngIf="(group.type_comment == 'sugerencias')">
+  <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro'">
+    <ngb-accordion  *ngIf="(group.type_comment == 'sugerencias')">
       <ngb-panel>
         <ng-template ngbPanelTitle>
           <div class="cabecera">
@@ -35,17 +38,23 @@
           </div>
         </ng-template>
         <ng-template ngbPanelContent>
-          <div class="cuerpo" *ngFor="let users of listOfContacts">
+          <div class="cuerpo" *ngFor="let users of listOfUsers">
             <div *ngIf="(group.user_Id == users.id)">
               <span > AUTOR: {{users.name}} </span> <br>
               <span> FECHA: {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}} </span> <br>
               <span> SUGERENCIA: {{group.comment}} </span> <br>
-              <button type="button" class="btn btn-success" (click)="changeStatusLeido(group.id, group.estado_leido)">Marcar como Leido </button>
+              <button type="button" class="btn btn-success" (click)="changeStatusLeido(group.id, group.estado_leido)">Marcar como LEIDO </button>
+              <button type="submit" class="btn btn-danger" style="margin-left: 1%" (click)="changeStatusLeidoToNoLeido(group.id, group.estado_leido)"> Marcar como NO LEIDO </button>
             </div>
           </div>
         </ng-template>
       </ngb-panel>
     </ngb-accordion>
   </ng-container>
+
+
+
+
+
 </div>
 

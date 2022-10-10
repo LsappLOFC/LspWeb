@@ -1,3 +1,5 @@
+import {User} from "./user";
+
 export interface Comments {
   id?: string,
   comment: string,
