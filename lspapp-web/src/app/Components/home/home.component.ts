@@ -1,5 +1,4 @@
 import { Component, OnInit, VERSION } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {UsersService} from "../../services/users.service";
 import {User} from "../../interfaces/user";
 import {Router} from "@angular/router";
@@ -21,8 +20,7 @@ export class HomeComponent implements OnInit {
   users:User[];
 
   constructor(private userService: UsersService,
-              private _router: Router,
-              private http: HttpClient){
+              private _router: Router){
     this.users = [];
     this.userService.getUser().subscribe(data => {
       this.listOfContacts = data;
@@ -80,7 +78,6 @@ export class HomeComponent implements OnInit {
 
       }, error => console.error(error));
       // if(this.searchText== ""){ you don't need this if
-
     }
   }
 }

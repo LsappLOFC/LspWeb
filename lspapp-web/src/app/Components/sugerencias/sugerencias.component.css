@@ -27,6 +27,29 @@ ngb-accordion ::ng-deep .card-header button:focus {
   text-align: center;
 }
 
+.categorias{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  justify-content: space-between;
+  color: #0047ff;
+}
+
+.inicio{
+  text-align: start;
+  margin: 3% 0 0 2%;
+}
+
+.centro{
+  text-align: center;
+  margin: -2% 0 0 23%;
+}
+
+.derecha{
+  text-align: right;
+  margin: -2% 8% 0 0;
+}
+
 .cabecera{
   width: 100%;
   line-height: 1;
@@ -41,7 +64,12 @@ ngb-accordion ::ng-deep .card-header button:focus {
 
 .estado_leido{
   text-align: right;
-  margin: -15px 40% 0 35%;
+  margin: -15px 5% 0 5%;
+}
+
+.fecha{
+  text-align: center;
+  margin: -15px 0 0 25%;
 }
 
 .contenido{

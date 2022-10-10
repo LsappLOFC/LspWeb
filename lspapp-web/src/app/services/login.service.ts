@@ -17,4 +17,11 @@ export class LoginService {
       return null;
     }
   }
+
+  SignOut() {
+    return this._auth.signOut().then(() => {
+      window.alert('La sesión se cerro correctamente');
+    });
+  }
+
 }

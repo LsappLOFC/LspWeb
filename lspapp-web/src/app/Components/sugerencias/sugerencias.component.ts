@@ -31,7 +31,6 @@ export class SugerenciasComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   changeStatusLeido(id: string, estado_leido: boolean) {
     if (estado_leido){
       alert('El mensaje esta marcado como leido, no se puede hacer cambios');
@@ -64,7 +63,6 @@ export class SugerenciasComponent implements OnInit {
 
       }, error => console.error(error));
       // if(this.searchText== ""){ you don't need this if
-
     }
   }
 

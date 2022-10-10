@@ -3,6 +3,18 @@
 <div class="contenido">
   <h1> SUGERENCIAS </h1>
 
+  <div class="categorias">
+    <div class="inicio">
+      COMENTARIO
+    </div>
+    <div class="centro">
+      FECHA
+    </div>
+    <div class="derecha">
+      ESTADO
+    </div>
+  </div>
+
   <ng-container  *ngFor="let group of listOfComents | orderBy: 'fechaHoraRegistro'">
     <ngb-accordion style="background-color: #005aff" *ngIf="(group.type_comment == 'sugerencias')">
       <ngb-panel>
@@ -16,6 +28,9 @@
             </div>
             <div class="estado_leido" *ngIf="(group.estado_leido != false)">
               LEIDO
+            </div>
+            <div class="fecha">
+              {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}}
             </div>
           </div>
         </ng-template>

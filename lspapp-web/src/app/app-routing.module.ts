@@ -7,6 +7,7 @@ import {SugerenciasComponent} from "./Components/sugerencias/sugerencias.compone
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'sugerencias', component: SugerenciasComponent}
 ];
