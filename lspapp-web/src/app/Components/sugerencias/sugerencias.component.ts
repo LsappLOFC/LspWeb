@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CommentsService} from "../../services/comments.service";
 import {UsersService} from "../../services/users.service";
-import {User} from "../../interfaces/user";
-
 
 @Component({
   selector: 'app-sugerencias',
@@ -16,20 +14,64 @@ export class SugerenciasComponent implements OnInit {
   searchText = "";
   date = '';
 
+  selectedDay: string = '';
+
   users: any;
+  private filterValue: string | undefined;
+  private dataSource: any;
 
   constructor(private commentService: CommentsService,
               private userService: UsersService) {
-
-    this.commentService.getComments().subscribe(data => {
-      this.listOfComents = data;
-    }, error => console.error(error));
   }
 
   ngOnInit(): void {
+    this.commentService.getComments().subscribe(data => {
+      this.listOfComents = data;
+    }, error => console.error(error));
+
     this.userService.getUser().subscribe(data => {
       this.listOfUsers = data;
     }, error => console.error(error));
+  }
+
+  updateFilter(event: Event) {
+    this.filterValue = (event.target as HTMLInputElement).value;
+    this.listOfComents.filter = this.filterValue.trim().toLowerCase();
+    console.log(this.listOfComents.filter);
+
+    if (this.listOfComents.paginator) {
+      this.listOfComents.paginator.firstPage();
+    }
+  }
+
+  selectChangeHandler (event: any) {
+    this.selectedDay = event.target.value;
+
+    let primero: boolean = true;
+
+
+    if (this.selectedDay == 'LEIDO'){
+      console.log(this.selectedDay);
+
+      console.log('Entraremos al for');
+
+      console.log(this.listOfComents.length);
+
+      for (var i = 0; i < this.listOfComents.length; i++){
+        if (this.listOfComents[i].estado_leido == true){
+          console.log(this.listOfComents[i]);
+          console.log('filtro');
+
+          this.listOfComents = this.listOfComents.filter((contact:any) =>{
+            return contact.estado_leido.search(primero);
+          });
+
+        }
+      }
+
+    }
+
+
   }
 
   transform(items: any[], searchText: string): any[] {
@@ -41,8 +83,6 @@ export class SugerenciasComponent implements OnInit {
       return it.name.toLowerCase().includes(searchText);
     });
   }
-
-
 
   Search(){
     // alert(this.searchText)

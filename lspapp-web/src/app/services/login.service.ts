@@ -1,21 +1,31 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private _auth : AngularFireAuth){}
+  validacion: boolean = true;
 
-  async login(email: string, password: string){
+  constructor(private _auth : AngularFireAuth,
+              private _router: Router){}
+
+  async login(email: string, password: string, ){
     try{
+      this.validacion = true;
       return await this._auth.signInWithEmailAndPassword(email, password);
     }
     catch(error) {
-      alert("No se ha podido hacer el log-in correctamente. Error en los datos ingresados");
+      alert("Datos del usuario ingresado incorrectamente, revisar el email y el password");
+      this.validacion = false;
       return null;
     }
+  }
+
+  getvalidacion(){
+    return this.validacion;
   }
 
   SignOut() {

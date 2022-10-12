@@ -27,22 +27,29 @@ ngb-accordion ::ng-deep .card-header button:focus {
   text-align: center;
 }
 
+.BoxItem{
+  text-align: right;
+  margin: -3% 0 0 0;
+  height: 25px;
+}
+
 .categorias{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   justify-content: space-between;
   color: #0047ff;
+  margin-top: 1%;
 }
 
 .inicio{
   text-align: start;
-  margin: 0.5% 0 0.5% 2%;
+  margin: 0 0 0.5% 2%;
 }
 
 .centro{
   text-align: center;
-  margin: -1.8% 0 0.5% 23%;
+  margin: -2.3% 0 0.5% 23%;
 }
 
 .derecha{

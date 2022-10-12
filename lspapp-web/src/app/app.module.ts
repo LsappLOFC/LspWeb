@@ -13,7 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FIREBASE_OPTIONS} from "@angular/fire/compat";
 import { NavComponent } from './Components/nav/nav.component';
 import { SugerenciasComponent } from './Components/sugerencias/sugerencias.component';
-import {NgbAccordionModule, NgbAlertModule, NgbDatepickerModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbAccordionModule, NgbAlertModule, NgbDatepickerModule, NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
 import {OrderModule} from "ngx-order-pipe";
 
 @NgModule({
@@ -24,19 +24,20 @@ import {OrderModule} from "ngx-order-pipe";
     NavComponent,
     SugerenciasComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgbAccordionModule,
-    NgbAlertModule,
-    NgbDatepickerModule,
-    OrderModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgbAccordionModule,
+        NgbAlertModule,
+        NgbDatepickerModule,
+        OrderModule,
+        NgbDropdownModule
+    ],
   providers: [ { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })
