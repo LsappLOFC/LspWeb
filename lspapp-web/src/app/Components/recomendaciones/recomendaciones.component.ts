@@ -3,11 +3,11 @@ import {CommentsService} from "../../services/comments.service";
 import {UsersService} from "../../services/users.service";
 
 @Component({
-  selector: 'app-sugerencias',
-  templateUrl: './sugerencias.component.html',
-  styleUrls: ['./sugerencias.component.css']
+  selector: 'app-recomendaciones',
+  templateUrl: './recomendaciones.component.html',
+  styleUrls: ['./recomendaciones.component.css']
 })
-export class SugerenciasComponent implements OnInit {
+export class RecomendacionesComponent implements OnInit {
   listOfComents:any;
   listOfUsers:any;
   comments: unknown;

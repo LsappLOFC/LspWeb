@@ -15,6 +15,7 @@ import { NavComponent } from './Components/nav/nav.component';
 import { SugerenciasComponent } from './Components/sugerencias/sugerencias.component';
 import {NgbAccordionModule, NgbAlertModule, NgbDatepickerModule, NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
 import {OrderModule} from "ngx-order-pipe";
+import { RecomendacionesComponent } from './Components/recomendaciones/recomendaciones.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {OrderModule} from "ngx-order-pipe";
     HomeComponent,
     NavComponent,
     SugerenciasComponent,
+    RecomendacionesComponent,
   ],
     imports: [
         BrowserModule,
@@ -36,7 +38,7 @@ import {OrderModule} from "ngx-order-pipe";
         NgbAlertModule,
         NgbDatepickerModule,
         OrderModule,
-        NgbDropdownModule
+        NgbDropdownModule,
     ],
   providers: [ { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]

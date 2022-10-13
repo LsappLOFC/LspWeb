@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 
 <div class="contenido">
-  <h1> SUGERENCIAS </h1>
+  <h1> RECOMENDACIONES </h1>
 
   <div>
     <input class="form-control mt-2 mb-2" style="max-width: 35%" type="text" [(ngModel)]="searchText"  (input)="Search()" placeholder="Buscar por comentario" />
@@ -30,7 +30,7 @@
 
     <div *ngIf="getValueEstado() == 1">
       <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro'">
-        <ngb-accordion  *ngIf="(group.type_comment == 'sugerencias')">
+        <ngb-accordion  *ngIf="(group.type_comment == 'recomendaciones')">
           <ngb-panel>
             <ng-template ngbPanelTitle>
               <div class="cabecera">
@@ -70,7 +70,7 @@
 
     <div *ngIf="getValueEstado() == 2">
       <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro'">
-        <ngb-accordion  *ngIf="(group.type_comment == 'sugerencias') && (group.estado_leido != false)">
+        <ngb-accordion  *ngIf="(group.type_comment == 'recomendaciones') && (group.estado_leido != false)">
           <ngb-panel>
             <ng-template ngbPanelTitle>
               <div class="cabecera">
@@ -110,7 +110,7 @@
 
     <div *ngIf="getValueEstado() == 3">
       <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro'">
-        <ngb-accordion  *ngIf="(group.type_comment == 'sugerencias') && (group.estado_leido != true)">
+        <ngb-accordion  *ngIf="(group.type_comment == 'recomendaciones') && (group.estado_leido != true)">
           <ngb-panel>
             <ng-template ngbPanelTitle>
               <div class="cabecera">
