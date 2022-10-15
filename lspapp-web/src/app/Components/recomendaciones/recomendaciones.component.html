@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div style="margin-top: 1%">
+  <div style="margin-top: 2%">
     <div class="categorias">
       <div class="inicio">
         COMENTARIO
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div *ngIf="getValueEstado() == 1">
+    <div style="margin-top: 0.3%" *ngIf="getValueEstado() == 1">
       <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro'">
         <ngb-accordion  *ngIf="(group.type_comment == 'recomendaciones')">
           <ngb-panel>
