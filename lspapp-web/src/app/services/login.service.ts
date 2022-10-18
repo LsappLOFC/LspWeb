@@ -18,7 +18,7 @@ export class LoginService {
       return await this._auth.signInWithEmailAndPassword(email, password);
     }
     catch(error) {
-      alert("Datos del usuario ingresado incorrectamente, revisar el email y el password");
+      alert("Usuario incorrecto");
       this.validacion = false;
       return null;
     }
