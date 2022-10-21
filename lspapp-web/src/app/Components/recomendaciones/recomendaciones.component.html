@@ -28,8 +28,8 @@
       </div>
     </div>
 
-    <div style="margin-top: 0.3%" *ngIf="getValueEstado() == 1">
-      <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro'">
+    <div style="margin-top: 0.6%" *ngIf="getValueEstado() == 1">
+      <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro': true">
         <ngb-accordion  *ngIf="(group.type_comment == 'recomendaciones')">
           <ngb-panel>
             <ng-template ngbPanelTitle>
@@ -68,8 +68,8 @@
       </ng-container>
     </div>
 
-    <div *ngIf="getValueEstado() == 2">
-      <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro'">
+    <div style="margin-top: 0.6%" *ngIf="getValueEstado() == 2">
+      <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro': true">
         <ngb-accordion  *ngIf="(group.type_comment == 'recomendaciones') && (group.estado_leido != false)">
           <ngb-panel>
             <ng-template ngbPanelTitle>
@@ -108,8 +108,8 @@
       </ng-container>
     </div>
 
-    <div *ngIf="getValueEstado() == 3">
-      <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro'">
+    <div style="margin-top: 0.6%" *ngIf="getValueEstado() == 3">
+      <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro': true">
         <ngb-accordion  *ngIf="(group.type_comment == 'recomendaciones') && (group.estado_leido != true)">
           <ngb-panel>
             <ng-template ngbPanelTitle>
