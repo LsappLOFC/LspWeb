@@ -6,16 +6,16 @@
   transition: 0.5s;
 }
 .sidebar-nav ul li a:hover {
-  background-color: #5db6ec;
+  background-color: rgba(176, 181, 253, 0.98);
   border-radius: 4px;
 }
 .sidebar-nav .offcanvas {
-  background-color: #0047ff;
+  background-color: #007AFF;
   width: 220px;
   border: none;
 }
 .sidebar-nav .offcanvas ul li a span {
-  color: white;
+  color: #ffffff;
   font-size: 15px;
   position: relative;
   top: -4px;
@@ -37,8 +37,8 @@
   font-family: "Zizou Slab Light", serif;
   font-size: 16px;
 }
-.navbar-nav{
-  filter: opacity(100%) drop-shadow(0 0 0 #b7d0f1);
+.color-icons{
+  color: white;
 }
 
 .logout{
