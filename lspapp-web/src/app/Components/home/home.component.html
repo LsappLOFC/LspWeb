@@ -1,10 +1,10 @@
-<app-nav></app-nav>
-<br><br>
-<div style="max-width: 100VH" class="container text-center mt-4">
+<app-nav> </app-nav>
 
-  <div class="input-group">
-    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-    <input class="form-control" type="text" [(ngModel)]="searchText"  (input)="Search()" placeholder="Buscar por correo" />
+<div class="container text-center mt-4">
+
+  <div  class="input-group">
+    <span style="margin-top: 3%" class="input-group-text"><i class="bi bi-envelope"></i></span>
+    <input style="margin-top: 3%" class="form-control" type="text" [(ngModel)]="searchText"  (input)="Search()" placeholder="Buscar por correo" />
   </div>
 
   <table style="margin-top: 2%" class="table table-striped table-bordered table-sm row-border hover border-primary" id="datatableexample">
