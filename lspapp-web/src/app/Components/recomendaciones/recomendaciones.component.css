@@ -22,12 +22,13 @@ ngb-accordion ::ng-deep .card-header button:focus {
 
 .contenido h1{
   font-size: 35px;
-  font-family: "Zizou Slab Light", serif;
+  font-family: "Poppins", serif;
   color: #5d7eff;
   text-align: center;
 }
 
 .BoxItem{
+  position: relative;
   text-align: right;
   margin: -3% 0 0 0;
 }
@@ -61,6 +62,7 @@ ngb-accordion ::ng-deep .card-header button:focus {
   line-height: 1;
 }
 .titulo{
+  font-size: 13px;
   text-align: start;
   text-overflow: ellipsis;
   width: 50%;
@@ -80,7 +82,7 @@ ngb-accordion ::ng-deep .card-header button:focus {
 
 .contenido{
   width: 90%;
-  font-family: "Zizou Slab Light", serif;
+  font-family: "Poppins", serif;
   text-align: start;
 }
 

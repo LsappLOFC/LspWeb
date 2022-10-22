@@ -1,14 +1,6 @@
 .form-container {
-  min-width: 55%;
-  max-width: 55%;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 2rem 3rem;
-  border-radius: 3rem;
   background-color: #e4eff6;
-  box-shadow: 13px 13px 20px #5689d3, -13px -13px 20px #fcfcfc;
-  margin: 6% 0 0 24%;
 }
-
 .form-container .title{
   color: #3563d5;
   font-size: 25px;

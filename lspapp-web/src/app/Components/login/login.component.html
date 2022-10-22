@@ -1,28 +1,63 @@
-<div class="form-container">
-  <h3 class="title"> Login </h3>
-  <form class="form-horizontal">
-    <div class="form-group">
-      <label>Correo electronico</label>
-      <input
-        type="email"
-        name="email" #email
-        placeholder="example@example.com"
-        class="form-control"
-        required="required">
-      <br/>
+<section style="background-color: #007AFF; height: 100vh;font-family: 'Poppins',cursive; ">
+
+  <div class="container py-4 h-75">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-1">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="./assets/imagen_login.jpg"
+                   alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black form-container">
+
+                <form class="form-horizontal">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span style="color: #007AFF" class="h1 fw-bold mb-0">LSAPP WEB</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Ingrese su cuenta</h5>
+
+                  <div class="form-group">
+                    <label>Correo Electronico</label>
+                    <div  class="input-group">
+                      <span style="border: 0" class="input-group-text"><i class="bi bi-envelope"></i></span>
+                      <input
+                        type="email"
+                        name="email" #email
+                        placeholder="example@example.com"
+                        class="form-control"
+                        required="required">
+                      <br/>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Contraseña</label>
+                    <div  class="input-group">
+                      <span style="border: 0" class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                      <input
+                        type="password"
+                        name="password" #password
+                        placeholder="******"
+                        class="form-control"
+                        pattern="[A-Za-z0-9]{6,20}">
+                      <br/>
+                    </div>
+                    <button type="button" class="btn btn-default" (click)="logIn()">
+                      Iniciar Sesión
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Contraseña</label>
-      <input
-        type="password"
-        name="password" #password
-        placeholder="******"
-        class="form-control"
-        pattern="[A-Za-z0-9]{6,20}">
-      <br/>
-      <button type="button" class="btn btn-default" (click)="logIn()">
-        Iniciar Sesión
-      </button>
-    </div>
-  </form>
-</div>
+  </div>
+
+</section>
