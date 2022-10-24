@@ -1,3 +1,8 @@
+.container{
+  max-width: 100%;
+  height: max-content;
+}
+
 ngb-accordion ::ng-deep .card-header {
   padding: 6em;
 }
@@ -13,14 +18,7 @@ ngb-accordion ::ng-deep .card-header button:focus {
   box-shadow: sienna;
 }
 
-.contenido{
-  margin-top: 5em;
-  margin-left: 5em;
-  margin-right: 5em;
-  text-align: center;
-}
-
-.contenido h1{
+.sugerencia{
   font-size: 35px;
   font-family: "Poppins", serif;
   color: #5d7eff;
