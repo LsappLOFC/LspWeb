@@ -1,14 +1,18 @@
 <app-nav></app-nav>
 
-<div class="container" style="font-family: 'Poppins',cursive; ">
-  <br><br><br>
+<div class="contenido" style="font-family: 'Poppins',cursive; ">
+
   <h1 class="recomendaciones"> RECOMENDACIONES </h1>
 
-  <div>
-    <input class="form-control mt-2 mb-2" style="max-width: 35%" type="text" [(ngModel)]="searchText"  (input)="Search()" placeholder="Buscar por comentario" />
+  <div style="display: flex; justify-content: space-between">
 
-    <div class="BoxItem">
-      <select (change)="getEstado($event)">
+    <div class="input-group" style="width: 75%">
+      <span class="input-group-text"><i class="bi bi-chat-left-dots"></i></span>
+      <input class="form-control" type="text" [(ngModel)]="searchText"  (input)="Search()" placeholder="Buscar por comentario" />
+    </div>
+
+    <div style="width: 25%">
+      <select class="form-select" (change)="getEstado($event)">
         <option value="SELECCIONARESTADO">SELECCIONE EL ESTADO</option>
         <option value="LEIDO">LEIDO</option>
         <option value="NOLEIDO">NO LEIDO</option>
@@ -16,19 +20,13 @@
     </div>
   </div>
 
-  <div style="margin-top: 2%">
-    <div class="categorias">
-      <div class="inicio">
-        COMENTARIO
-      </div>
-      <div class="centro">
-        FECHA
-      </div>
-      <div class="derecha">
-        ESTADO
-      </div>
-    </div>
+  <div class="categorias">
+    <h5>COMENTARIO</h5>
+    <h5 style="margin-left: 11%;">FECHA</h5>
+    <h5 style="margin-right: 1%;" >ESTADO</h5>
+  </div>
 
+  <div style="margin-top: 1%">
     <div style="margin-top: 0.6%" *ngIf="getValueEstado() == 1">
       <ng-container  class="acordiones"  *ngFor="let group of listOfComents  |  orderBy: 'fechaHoraRegistro': true">
         <ngb-accordion  *ngIf="(group.type_comment == 'recomendaciones')">
@@ -38,14 +36,14 @@
                 <div class="titulo">
                   {{group.comment}}
                 </div>
+                <div class="fecha">
+                  {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}}
+                </div>
                 <div class="estado_leido" *ngIf="(group.estado_leido != true)">
                   NO LEIDO
                 </div>
                 <div class="estado_leido" *ngIf="(group.estado_leido != false)">
                   LEIDO
-                </div>
-                <div class="fecha">
-                  {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}}
                 </div>
               </div>
             </ng-template>
@@ -55,10 +53,10 @@
                   <span > AUTOR: {{users.name}} </span> <br>
                   <span> FECHA: {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}} </span> <br>
                   <span> SUGERENCIA: {{group.comment}} </span> <br>
-                  <div class="estado_leido" *ngIf="(group.estado_leido != true)">
+                  <div style="text-align: right" *ngIf="(group.estado_leido != true)">
                     <button type="button" class="btn btn-success" (click)="changeStatusLeido(group.id, group.estado_leido)">Marcar como LEIDO </button>
                   </div>
-                  <div class="estado_leido" *ngIf="(group.estado_leido != false)">
+                  <div style="text-align: right" *ngIf="(group.estado_leido != false)">
                     <button type="submit" class="btn btn-danger" style="margin-left: 1%" (click)="changeStatusLeidoToNoLeido(group.id, group.estado_leido)"> Marcar como NO LEIDO </button>
                   </div>
                 </div>
@@ -78,14 +76,14 @@
                 <div class="titulo">
                   {{group.comment}}
                 </div>
+                <div class="fecha">
+                  {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}}
+                </div>
                 <div class="estado_leido" *ngIf="(group.estado_leido != true)">
                   NO LEIDO
                 </div>
                 <div class="estado_leido" *ngIf="(group.estado_leido != false)">
                   LEIDO
-                </div>
-                <div class="fecha">
-                  {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}}
                 </div>
               </div>
             </ng-template>
@@ -95,10 +93,10 @@
                   <span > AUTOR: {{users.name}} </span> <br>
                   <span> FECHA: {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}} </span> <br>
                   <span> SUGERENCIA: {{group.comment}} </span> <br>
-                  <div class="estado_leido" *ngIf="(group.estado_leido != true)">
+                  <div style="text-align: right" *ngIf="(group.estado_leido != true)">
                     <button type="button" class="btn btn-success" (click)="changeStatusLeido(group.id, group.estado_leido)">Marcar como LEIDO </button>
                   </div>
-                  <div class="estado_leido" *ngIf="(group.estado_leido != false)">
+                  <div style="text-align: right" *ngIf="(group.estado_leido != false)">
                     <button type="submit" class="btn btn-danger" style="margin-left: 1%" (click)="changeStatusLeidoToNoLeido(group.id, group.estado_leido)"> Marcar como NO LEIDO </button>
                   </div>
                 </div>
@@ -118,14 +116,14 @@
                 <div class="titulo">
                   {{group.comment}}
                 </div>
+                <div class="fecha">
+                  {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}}
+                </div>
                 <div class="estado_leido" *ngIf="(group.estado_leido != true)">
                   NO LEIDO
                 </div>
                 <div class="estado_leido" *ngIf="(group.estado_leido != false)">
                   LEIDO
-                </div>
-                <div class="fecha">
-                  {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}}
                 </div>
               </div>
             </ng-template>
@@ -135,10 +133,10 @@
                   <span > AUTOR: {{users.name}} </span> <br>
                   <span> FECHA: {{group.fechaHoraRegistro.seconds*1000 | date: 'dd/MM/yyyy'}} </span> <br>
                   <span> SUGERENCIA: {{group.comment}} </span> <br>
-                  <div class="estado_leido" *ngIf="(group.estado_leido != true)">
+                  <div style="text-align: right" *ngIf="(group.estado_leido != true)">
                     <button type="button" class="btn btn-success" (click)="changeStatusLeido(group.id, group.estado_leido)">Marcar como LEIDO </button>
                   </div>
-                  <div class="estado_leido" *ngIf="(group.estado_leido != false)">
+                  <div style="text-align: right" *ngIf="(group.estado_leido != false)">
                     <button type="submit" class="btn btn-danger" style="margin-left: 1%" (click)="changeStatusLeidoToNoLeido(group.id, group.estado_leido)"> Marcar como NO LEIDO </button>
                   </div>
                 </div>

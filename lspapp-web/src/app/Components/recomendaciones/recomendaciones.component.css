@@ -1,6 +1,8 @@
-.container{
-  max-width: 100%;
-  height: max-content;
+.contenido{
+  width: 100vh;
+  height: 100vh;
+  margin-top: 4%;
+  margin-left: 4%;
 }
 
 ngb-accordion ::ng-deep .card-header {
@@ -32,50 +34,39 @@ ngb-accordion ::ng-deep .card-header button:focus {
 }
 
 .categorias{
+  display: flex;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   justify-content: space-between;
-  color: #0047ff;
+  color: #007AFF;
   margin-top: 1%;
+  margin-left: 2%;
+  margin-right: 8%;
 }
 
-.inicio{
-  text-align: start;
-  margin: 0 0 0.5% 2%;
-}
-
-.centro{
-  text-align: center;
-  margin: -1.7% 0 0.5% 23%;
-}
-
-.derecha{
-  text-align: right;
-  margin: -2% 8% 0.5% 0;
-}
 
 .cabecera{
+  display: flex;
   width: 100%;
-  line-height: 1;
 }
 .titulo{
   font-size: 13px;
   text-align: start;
   text-overflow: ellipsis;
-  width: 50%;
+  width: 42%;
   white-space: nowrap;
   overflow:hidden;
 }
 
 .estado_leido{
-  text-align: right;
-  margin: -15px 5% 0 5%;
+  font-size: 13px;
+  margin-left: 33%;
 }
 
 .fecha{
-  text-align: center;
-  margin: -15px 0 0 25%;
+  font-size: 13px;
+  margin-left: 10%;
 }
 
 .contenido{

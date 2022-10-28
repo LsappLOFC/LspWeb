@@ -5,6 +5,15 @@
   padding: 6px 10px;
   transition: 0.5s;
 }
+
+.contenido{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 .sidebar-nav ul li a:hover {
   background-color: #8bc6cf;
   border-radius: 4px;
